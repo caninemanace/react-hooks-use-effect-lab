@@ -9,13 +9,13 @@ function App() {
   const currentQuestion = questions.find((q) => q.id === currentQuestionId);
 
   function handleQuestionAnswered(correct) {
-    if (currentQuestionId < questions.length) {
-      setCurrentQuestion((currentQuestionId) => currentQuestionId + 1);
-    } else {
-      setCurrentQuestion(null);
-    }
     if (correct) {
       setScore((score) => score + 1);
+    }
+    if (currentQuestionId < questions.length) {
+      setCurrentQuestion((id) => id + 1);
+    } else {
+      setCurrentQuestion(null);
     }
   }
 
@@ -39,3 +39,4 @@ function App() {
 }
 
 export default App;
+
